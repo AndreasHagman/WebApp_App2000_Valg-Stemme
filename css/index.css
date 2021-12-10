@@ -1,0 +1,1429 @@
+/*Kode skrevet av Remi, Endre, Waleed, Andreas, Petter
+/*Kode kontrollert av Petter, Andreas, Waleed, Endre, Remi
+
+/* ---------------------------------------------- Global css ------------------------------------------------------------------------------ */
+.requiredDot{
+  color: #A30000;
+}
+#alertGrønn {
+  padding: 20px;
+  background-color: Green; /* Grønn */
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
+#alertGrønn:before{
+  content:"✔";
+  padding: 15; 
+}
+#alertRød {
+  padding: 20px;
+  background-color: Red; /* Rød */
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
+#alertRød:before{
+  padding:15;
+}
+
+/*
+#signup-response{
+  padding:20px;
+  text-align: center;
+  background-color: green;
+  
+   animation:signup-response 0.5s 1;
+  -webkit-animation:signup-response 0.5s 1;
+  animation-fill-mode: forwards;
+  
+  animation-delay:2s;
+  -webkit-animation-delay:1s; /* Safari and Chrome */
+  /*-webkit-animation-fill-mode: forwards;
+  
+  
+} 
+
+@keyframes signup-response{
+  from {opacity :1;}
+  to {opacity :0;}
+}
+
+@-webkit-keyframes signup-response{
+  from {opacity :1;}
+  to {opacity :0;}
+}
+*/
+
+/* Lukkeknappen */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+/* Hovrer musepeker over lukkeknappen */
+.closebtn:hover {
+  color: black;
+}
+.loginsom{
+  text-align: right; 
+  margin: 0px 10px 10px 0; 
+  color: rgb(0, 29, 146);
+}
+
+html,body {
+  width: 100%;
+  margin:0;
+  padding:0;
+  background: #f0f0f0;
+  color: #000000;
+  line-height: 1.5;
+  
+}
+html{
+  min-height: 100%;
+  position:relative;
+}
+body{
+  margin:55px 0 65px 0;
+}
+main {
+  /*min-height: calc(120vh - 211px - 58px);*/
+  /* min-height: calc(120vh); */
+  /*min-height: calc(98vh - 210px);*/
+}
+html {
+  font-family: "helvetica neue", sans-serif;
+}
+h1, h2 {
+  text-align: center;
+}
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  border-bottom: 1px solid rgb(0, 0, 0);;
+  text-align: right;
+  background-color: #ffffff;
+}
+.menu {
+  margin: 0 30px 0 0;
+  list-style-type: none;
+  line-height: 70px;
+  background-color: #ffffff;
+  display: none;
+  clear:right;
+}
+
+.menu a{
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  border-top:1px solid #000000;
+  border-bottom: 1px solid #000000;
+  display: block;
+  margin: 0px;
+  padding: 0px 10px 0px 10px;
+  background-color: #dadada;
+}
+.menu a:hover{
+  color: #ffffff;
+}
+#navikon {
+  margin: 0 20px 0 0;
+  font-size: 30px;
+  line-height: 50px;
+  width: 26px;
+  display: block;
+  cursor:pointer;
+  float : right;
+}
+#toggle {
+  display: none;
+}
+footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  background-color: #ffffff;
+  border-top:1px solid #000000;
+  font-size: smaller;
+}
+
+/* footer p {
+  width: auto auto;
+} */
+
+#navikon:hover{
+  color: #5FA69F; 
+}
+ul.menu {
+  margin-right: 0px;
+  padding: 0px 0px 0px 0px;
+}
+#toggle:checked + .menu {
+  display: block;
+}
+/* ---------------------------------------------- infovalg.html ------------------------------------------------------------------------------ */
+#indexArtikkel {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: auto;
+  
+}
+#indexArtikkel p {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.valg_info {
+  border: solid 1px black;
+  width: 95%;
+  padding: 5px 0px 5px 0px;
+  margin:auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0 8px 0 black, 0 2px 4px 0 black;
+}
+
+#resFremvisning {
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  background-color:#00203FFF;
+  box-shadow: 0px 0 8px 0 black, 0 2px 4px 0 black;
+  padding:3px;
+  /* Høyde på tabellen */
+  /*overflow-y:auto ;
+  height: 200px;
+  display:block;*/
+}
+#fremvisningTabell{
+  margin: 5px 7px 7px 7px;
+}
+#resFremvisning h2 {
+  margin: 5px 5px 5px 5px;
+  text-align: center;
+  font-size: large;
+}
+#fremvisningTabell td{
+  margin: 100px;
+}
+.stemmer{
+  padding-left: 20px;
+}
+.ledetekst{
+  font-weight: bold;
+  color:rgb(255, 255, 255);
+}
+
+  /*-------------------------------------default.php css-----------------------------------------------------------*/
+  .fargeDefaultBoks {
+    background-color: #00203FFF;
+    color: rgb(255, 255, 255);
+  }
+  #indexArtikkel a:hover {
+    color: blue;
+  }
+
+  #defaultInfo {
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 0px;
+  }
+
+  /*-------------------------------------nominering-php css-----------------------------------------------------------*/
+
+.nom_artikkel{
+  padding:3px;
+}
+/*Sørger for at tabellen kan skrolles dersom tabellen blir høyere enn angitt høyde
+og sørger for at scrollbaren hele tiden ligger inntil tabellen "fit-content" go sentrerer tabellen
+Sentrerer tabellen med margin auto */
+#registrert_kan {
+  border-collapse: collapse;
+  overflow-y:auto;
+  height: 355px;
+  display:block;
+  width:max-content;
+  margin-left: auto;
+  margin-right: auto;
+  scroll-snap-type: y mandatory;
+}
+/* Gjør tableheading sticky slik at de synes selv når du scroller langt ned  */
+#registrert_kan th {
+  top: 0;
+  background-color:#00203FFF;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  padding: 10px;
+  color: white;
+  scroll-snap-align: start;
+}
+
+#registrert_kan td {
+  border-bottom: 1px solid rgb(0, 0, 0);
+  padding: 10px;
+  height:59.2px;
+  scroll-snap-align: start;
+}
+
+/* Sentrerer tabellen */
+#ny_kandidat{
+  margin-left:auto;
+  margin-right:auto;
+}
+#ny_kandidat td{
+  padding-bottom: 10px;
+}
+#ny_kandidat th{
+  color:black;
+}
+#reg_knapp{
+/*Prøver å justere knapp til å alltid ligge sentrert med feltet over */
+  margin-left: 30%;
+  cursor: pointer;
+  width: 100px;
+}
+.nom_input1{
+  cursor: text;
+  width: 279px;
+  height: 25px;
+}
+textarea {
+  font-family: arial;
+  width: 280px;
+  height: 130px;
+  cursor: text;
+}
+#navn_sok{
+  width: 287px;
+  height: 30px;
+}
+#ny_kandidat2{
+  display: none;
+}
+#reg_knapp2{
+  display: none;
+  cursor: pointer;
+}
+.nom_artikkel_skjult{
+  display:none;
+}
+#nom_header h1{
+  margin:0px;
+}
+#nom_select{
+  width: 280px;
+}
+.mini_bilde{
+  border-radius: 30px;
+}
+
+#ingenNominerte{
+  text-align: center;
+  color: red;
+}
+
+
+/*-------------------------------------registrering.css-----------------------------------------------------------*/
+.tabellRegistrering, .kolonne1, .tdRegistrering {
+  border-collapse: collapse;
+}
+.tdRegistrering {
+  text-align: center;
+}
+.tdRegistrering {
+  padding:6px 8px 6px 8px;
+  /* border-spacing: center; */
+}
+.kolonne1{
+  padding: 2px 8px 0px 8px;
+  text-align: center;
+  color:#000000;
+}
+.tabellRegistrering {
+  width: 100%;
+  border-spacing: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tdRegistrering .button {
+  text-align: center;
+}
+
+.button {
+  background-color: lightgreen;
+  width: 200px;
+  max-width: 100%;
+  height: 35px;
+  margin-top: 3px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid lightgreen;
+  border-radius: 12px;
+
+  /* border-radius: 40%; */
+}
+.button:hover {
+  border: 3px solid green;
+}
+
+.fornavnEtternavnRegistrering {
+  color: rgba(5, 5, 2, 0.6);
+}
+
+.inputKnapp {
+  height: 30px;
+  width: 300px;
+  background-color: white;
+  font-size: 13.5px;
+}
+
+#alleredeRegistrert {
+  text-align: center;
+}
+.tdRegistrering #alleredeRegistrert a:hover {
+  color: blue;
+  cursor: pointer;
+}
+#vilkår {
+  margin-right: 10px;
+}
+#checkbox {
+  transform: scale(1.5);
+  margin-top: 0px;
+}
+input[type="checkbox"]:checked + #navikon::before {
+  background: green;
+  background-color: green;
+}
+#checkbox:checked {
+  background-color: green;
+}
+#vilkår:hover {
+  color: blue;
+  cursor: pointer;
+}
+#overskriftRegistrering {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#vis2 {
+  display: block;
+} 
+
+#PNK {
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+}
+#PNK2 {
+  text-align: center;
+  margin: 0px 0px 0px 0px;
+}
+#PNK3 {
+  text-align: center;
+  margin: 0px auto 0px auto;
+  word-wrap: break-word;
+
+  
+  
+}
+#reg_passord{
+  padding-bottom: 4px;
+}
+
+/*-------------------------------------------------minside.php------------------------------------------------------*/
+
+#minside_overskrift{
+  margin: 0px;
+} 
+
+#minsideMain {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+#byttBilde {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#trekkNominasjon {
+  margin-top: 25px;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:25%;
+  text-align: center;
+}
+#trekkNominasjonBekreft {
+  margin-top: 10px;
+  width: 100px;
+}
+#trekkNominasjon input[type=checkbox] {
+  transform: scale(2);
+}
+#slettbrukerseksjon{
+  margin: 25px 0px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#slettbrukerseksjon p{
+  color:rgb(0, 29, 146);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#slettbrukerseksjon button{
+  width:100px;
+}
+
+#kandidatInfo {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#endreInfoTabell tr{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#endreInfoTabell th{
+  color:rgb(0, 29, 146);
+}
+#endre_knapp {
+  width: 100px;
+  text-align: center;
+  margin:10px auto auto auto;
+  display:block;
+}
+
+.endreValgInfo{
+  min-width: fit-content;
+  width: 210px;
+}
+#fakultetE {
+  height: 25px;
+  width: 280px;
+}
+#instituttE {
+  height: 25px;
+  width: 280px;
+}
+#infoE {
+  width: 280px;
+}
+#byttPassordSec {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#lastoppknapp {
+  /* Style last opp knappen, flytte den til raden under? */
+  cursor: pointer;
+  float: right;
+}
+#fillastesopp{
+  cursor: pointer;
+}
+#alttekst{
+  text-align: center;
+  padding: 0px;
+  margin: 10px 5px 0px 5px;
+}
+#altlabel, #altinput{
+  position: relative;
+  display: block;
+  padding-left: 50px;
+  width: 200px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+#altlabel::after {
+  content:attr(data-domain);
+  position: absolute;
+  top: 4px;
+  margin-left: 2px;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+}
+/* "Velg fil" og "Last opp" tilhørende bildeopplasting  */
+.lastopp_bilde{
+  margin-top: 15px;
+}
+#byttPassord {
+  padding: 10px;
+}
+#byttPassord th {
+  color: rgb(0, 29, 146);;
+}
+#byttPassordTB td {
+  text-align: center;
+}
+#gammeltPassord {
+  width: 250px;
+  height: 25px;
+  margin: 5px;
+}
+#nyttPassord {
+  width: 250px;
+  height: 25px;
+  margin: 5px;
+}
+#ByttPWKnapp {
+  width: 100px;
+  margin-top: 10px;
+}
+#utnevnBrukerType{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+#utnevnBrukerType p{
+  color: rgb(0, 29, 146);;
+  font-weight: bold;
+  margin-top: 0px;
+}
+#brukerTypeForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#brukerTypeForm button{
+  width: 100px;
+}
+#velgBrukerType{
+  margin:10px;
+}
+#endreValg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+#endrevalgform{ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#fjerntrukket{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  text-align: center;
+}
+#submit_fjernTrukket{
+  width: 100px;
+  height: 50px;
+}
+#fjerntrukket p{
+  color: rgb(0, 29, 146);
+  font-weight: bold;
+}
+#endreValgInfoTabell th {
+  color: rgb(0, 29, 146);
+}
+#endreValgInfoTabell th small {
+  color:  #cdcdcd;
+}
+#endreValgInfoTabell h2{
+ color: black;
+}
+#konsistensknapp{
+  width:100px;
+}
+#tittelE{
+  width:210px;
+}
+
+#slettbrukerBTN {
+  background-color: lightcoral;
+  border: 1px solid lightcoral;
+}
+#slettbrukerBTN:hover {
+  border: 3px solid red;
+}
+#trekknom{
+  color:rgb(0, 29, 146);
+  font-weight: bold;
+}
+
+/*-------------------------------------------------Logginn.php-----------------------------------------------------*/
+.box{
+  position: relative;
+  background:  white;
+  width: 250px;
+  margin: 80 auto 100px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 black, 0 5px 5px 0 black;
+  border-radius:20px;
+}
+#glemtPwBox{
+  margin-top: 80px;
+}
+/* Farge på overskriften i login */
+.box h3{
+  color: black;
+}
+/* Farge(tekst og felt) og størrelse på inputfelt(email og passord) */
+.box input[type="text"],.box input[type= "password"]{
+  background: white;
+  color: black;
+  box-sizing: border-box;
+  font-size: 14px;
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 15px;
+}
+#passord{
+  margin-bottom: 5px;
+}
+#vis_passord{
+  margin: 0px 5px 0px 5px;
+  padding:0px;
+  text-align: center;
+}
+
+/* Størrelse,farge og cursor på login-knapp */
+.box input[type ="submit"]{
+  text-transform: uppercase;
+  background-color: lightgreen;
+  width: 50%;
+  height: auto;
+  border: 3px solid lightgreen;
+  padding: 15px;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+}
+/* Hover for logginn-knapp og glemt passord-hyperlink */
+#logginn:hover {
+  border: 3px solid green;
+}
+
+#glemtpassord:hover {
+  color:blue;
+}
+#caps_melding{
+  color: red;
+  font-size: small;
+  margin: 0px 0px 1px 0px;
+  padding:0px;
+}
+
+/* ---------------------------------------------- avstemming.php ------------------------------------------------------------------------------ */
+#avstemKnapp{
+  width:100px;
+  margin: 5px ;
+}
+.testsentrer{
+  text-align:center;
+  margin-top:10px;
+}
+.testsentrer select{
+ margin:15px 0px 10px 0px ;
+}
+#sentrerbilde{
+  margin-left:auto; 
+  margin-right:auto; 
+}
+#duharstemt{
+  margin-left: 10px;
+  text-align: center;
+}
+#stemmesvar{
+  margin-top:10px;
+  border: 1px solid #000000;
+  margin-left:auto; 
+  margin-right:auto; 
+  width: 250px; 
+  color: #000000;
+  box-shadow: 0px 0 5px 0 black, 0 2px 2px 0 black;
+}
+#fjernStemmeKnapp{
+  width:100px;
+  background-color: red;
+  color: white;
+  border-color: lightcoral;
+  margin: 10px 0px 10px 0px;
+}
+#seMer {
+  width:100px;
+  margin: 5px;
+}
+#visInfoAvstem {
+  color: #000000;;
+  border: 1px solid;
+  width:300px;
+  margin-left:auto; 
+  margin-right:auto; 
+  box-shadow: 0px 0 5px 0 black, 0 2px 2px 0 black;
+}
+#visInfoAvstem img{
+  size:50%;
+  width:170px;
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.infoTekst{
+  border-bottom: 1px solid;
+  text-align: center;
+}
+#overstkift_avtesmming{
+  margin:5px 0px 5px 0px;
+}
+.border{
+  border-radius: 5px;
+}
+ /*--------------------------------------------------informasjon.php-----------------------------------------------------------------*/
+ #informasjon_overskrift{
+  margin: 0px;
+}
+ 
+ /* Justering av section som inneholder info om hver kandidat */
+ #visInfo{
+  border: 1px solid;
+  width:300px;
+  margin-left:auto; 
+  margin-right:auto; 
+  box-shadow: 0px 0 5px 0 black, 0 2px 2px 0 black;
+  border-radius: 20px;
+ }
+ /* Bilde inni section */
+ #visInfo img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 50px;
+ }
+ /* Teksten inni section */
+ .infoTekst{
+   border-bottom: 1px solid;
+   width: 250px;
+   word-wrap: break-word;
+   margin-left: auto;
+   margin-right: auto;
+ }
+ #infoKnappForrige {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 0px 15px 0px 15px;  
+}
+
+#infoKnappForrige:hover {
+  background-color: #ddd;
+  color: black;
+} 
+#infoKnappNeste {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 0px 15px 0px 15px;  
+}
+
+#infoKnappNeste:hover {
+  background-color: #ddd;
+  color: black;
+} 
+
+#knappsection{
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  padding: 10px;
+}
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+.next {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.round {
+  border-radius: 50%;
+}
+#h1{
+  text-align: center;
+  padding-bottom: 10px;
+}
+/*-------------------------------------------------Konsistens.php-----------------------------------------------------*/
+#konsistens_overskrift{
+  margin: 0px;
+}
+
+#konsistensMain{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+#stemmetelling{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 97%; /* Nedjust fra 100% for margin på høyre og venstre side */
+}
+#stemmetelling h2{
+  text-align: center;
+}
+/*Tabell */
+#stemmetabell{
+  overflow-y:auto;
+  max-height: 259px;
+  display:block;
+  border-collapse: collapse;
+  margin: auto;
+  width: fit-content;
+  scroll-snap-type: y mandatory;
+}
+#stemmetabell th{
+  border-bottom: 1px solid;
+  padding: 2px 0px 2px 0px;
+  scroll-snap-align: start;
+}
+#stemmetabell td{
+  text-align: center;
+  border-bottom: 1px solid;
+  padding: 4px 0px 4px 0px;
+  scroll-snap-align: start;
+}
+#publiserValgKnapp{
+  width: 130px;
+}
+#epost_sjekk{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+}
+#epost_tabell{
+  border-collapse: collapse;
+  overflow-y:auto;
+  max-height: 269px;
+  display:block;
+  width:300px;
+  margin-left: auto;
+  margin-right: auto;
+  scroll-snap-type: y mandatory;
+}
+#epost_tabell td {
+  border-bottom: 1px solid;
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  scroll-snap-align: start;
+}
+#publiserValg{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 60px;
+  text-align: center;
+}
+#trekkValgKnapp{
+  width: 130px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  border-color: lightcoral;
+}
+
+/*-----------------------------------------------------test.php--------------------------------------------------------------*/
+
+.bekreft{
+  position: relative;
+  background: #2B2C30;
+  max-width: 330px;
+  margin: 0 auto 100px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 black, 0 5px 5px 0 black;
+}
+/* Farge på overskriften i login */
+.bekreft h3{
+  color: #cdcdcd;
+}
+/* Farge(tekst og felt) og størrelse på inputfelt(email og passord) */
+.bekreft input[type="text"],.bekreft input[type= "password"]{
+  background: white;
+  color: black;
+  box-sizing: border-box;
+  font-size: 14px;
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 15px;
+}
+/* Størrelse,farge og cursor på login-knapp */
+.bekreft input[type ="submit"]{
+  text-transform: uppercase;
+  background-color: lightgreen;
+  width: 100%;
+  border: 3px solid lightgreen;
+  padding: 15px;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+}
+/* Hover for logginn-knapp og glemt passord-hyperlink */
+#videre:hover {
+  border: 3px solid green;
+}
+
+/*--------------------------------------------bekreft.php-----------------------------------------------*/
+.bekreft{
+  position: relative;
+  background:  white;
+  max-width: 330px;
+  margin: 0 auto 100px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 black, 0 5px 5px 0 black;
+}
+/* Farge på overskriften */
+.bekreft h3{
+  color: black;
+}
+/* Farge(tekst og felt) og størrelse på inputfelt(kode) */
+.bekreft input[type="text"]{
+  background: white;
+  color: black;
+  box-sizing: border-box;
+  font-size: 14px;
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 15px;
+}
+/* Størrelse,farge og cursor på videre-knapp */
+.bekreft input[type ="submit"]{
+  text-transform: uppercase;
+  background-color: lightgreen;
+  width: 50%;
+  height: auto;
+  border: 3px solid lightgreen;
+  padding: 15px;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+}
+/* Hover for videre-knapp  */
+#videre:hover {
+  border: 3px solid green;
+}
+#bekreftFeil1{
+  color: red;
+}
+
+/*----------------------------------------Resultat.php------------------------------------------------------*/
+#tomResultat{
+  text-align: center;
+  color:red;
+}
+
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media  (min-width: 600px) {
+  /*-------------------------------------generell/meny(global)css-----------------------------------------------------------*/
+  footer{
+    font-size: initial;
+  }
+  body{
+    margin:78px 0 70px 0;
+  }
+  .menu #status {
+    float: left;
+    width: initial;
+    display:inline-block;
+    background-color: #2B2C30;
+    border: none;
+  }
+  select {
+    max-width:400px;
+  }
+  .menu a:hover{
+    color: #8b8b8b;
+  }
+  .menu li{
+    display: inline;
+    padding-left: 10px;
+    margin: 0px 20px 0px 0px;
+  }
+  .menu{
+    display: block;
+  }
+  .menu a{
+    width: initial;
+    display:inline-block;
+    background-color: #ffffff;
+    border: none;
+  }
+  #navikon { 
+    display: none;
+  }
+  .valg_info{
+    width: max-content;
+    padding: 5px 40px 5px 40px;
+  }
+
+  .button {
+  border-radius: 0px;
+  }
+  #minsideMain{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .minsideFlex {
+    flex-direction: row;
+    align-items: center;
+    min-width:25%;
+    padding:0px 10px 0px 10px;
+  } 
+
+  /*-------------------------------------avstemmming.php-----------------------------------------------------------*/
+  #buttonAvstemming { 
+    width:200px;
+  }
+  .border{
+  border-radius: 0px;
+  }
+  /*-------------------------------------nominering.css-----------------------------------------------------------*/
+  .nom_artikkel_skjult{
+    display:table-cell;
+  }
+  /* Justerer størrelse på inputfeltene*/
+  .nom_input1{
+    width: 300px;
+  }
+  #navn_sok{
+    width: 308px;
+  }
+  textarea{
+    width: 300px;
+  }
+  /* Justerer knapp på ny til tablet-visning */
+  #reg_knapp{
+    margin-left: 35%;
+  }
+  #nom_select{
+    width: 300px;
+  }
+
+  /*------------------------------------------------- Registrering.php -------------------------------------------------------------------- */
+  #alleredeRegistrert {
+    text-align: center;
+  }
+  .tdRegistrering {
+      text-align: center;
+  }
+  
+  /*.tabellRegistrering {
+    width: 60%;
+    height: 200px;
+  } */
+
+  /* .kolonne1 {
+    text-align: right;
+    font-size: Large;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  } */
+
+  .inputKnapp {
+    height: 35px;
+    width: 500px;
+    background-color: white;
+    font-size: 17px;
+  }
+  .button {
+    /* border-radius: 0%; */
+    width:200px;
+  }
+  #overskriftRegistrering {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .tdRegistrering {
+    padding:8px 8px 10px 8px;
+  }
+  .kolonne1{
+    padding: 2px 10px 2px 10px;
+  }
+ 
+  /*-------------------------------------------------Konsistens.php-----------------------------------------------------*/
+  #stemmetabell{
+    border: 1px solid;
+    border-collapse: collapse;
+    margin:0px auto auto auto;
+  }
+  #stemmetabell th{
+    border: 1px solid;
+    padding:7px;
+  }
+  #stemmetabell td{
+    text-align: center;
+    border: 1px solid;
+    padding: 7px;
+  }
+  #konsistensMain{
+    flex-direction: row;
+  }
+
+  /*----------------------------------------------Minside.php-------------------------------------------------*/
+  #slettbrukerseksjon button {
+    width: 60%;
+  }
+
+  /*----------------------------------------- informasjon.php ---------------------------------------------------- */
+  #visInfo, #visinfo img{
+    border-radius: 0px;
+
+  }
+  /*------------------------------------------bekfreft.php------------------------------------------------------- */
+  #glemtPwBox{
+    margin-top: 100px;
+  }
+  /*------------------------------------------logginn.php------------------------------------------------------- */
+  .box{
+  margin: 100 auto 100px;
+  width: 400px;
+  border-radius:0px;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  .loginsom{
+    margin: 0px 10px 0px 0; 
+  }
+  /*#indexArtikkel h3{
+    max-width: 30%;
+  }*/
+  /*-------------------------------------nominering.css-----------------------------------------------------------*/
+  /*Bryter siden  slik at det blir 2 kolonner i desktop-visning */
+  #nom_main		{column-count: 2;
+  }
+  #bryt2	{break-before: column;
+  } 
+  /* Justerer knapp på ny til desktop-visning*/
+  #reg_knapp2{
+  display: block;
+  margin-left: 14%;
+  }
+  /* Justerer størrelse på inputfeltene*/
+  .nom_input2{
+    width: 350px;
+    height: 30px;
+  }
+  #navn_sok{
+    width: 358px;
+  }
+  textarea{
+    width: 351px;
+  }
+  /* Øker høyden på tabellvisning */
+  #registrert_kan{
+    height: 356px;
+  }
+  /*tabell til mobilvisning*/
+  #ny_kandidat{
+    display: none;
+  }
+  /*tabell for tablet og desktop*/
+  #ny_kandidat2{
+    display:table;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  #ny_kandidat2 th{
+    padding: 0px 5px 0px 0px;
+    text-align: right;
+    color:black;
+  }
+  #ny_kandidat2 td{
+    padding: 10px;
+  }
+  /* Styler dropdowmenyen med navn */
+  #nom_select2{
+    width: 350px;
+  }
+
+  #registrert_kan td{
+    padding: 4px;
+  }
+  #nom_h2{
+    margin-left: 15%;
+  }
+
+  /*------------------------------------------------- Registrering.php -------------------------------------------------------------------- */
+  
+  #alleredeRegistrert {
+  text-align: center;
+  }
+  
+  /* .kolonne1 {
+    text-align: right;
+    font-size: Large;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  } */
+  
+  /* .kolonne1, .tdRegistrering {
+    padding: 15px;
+  } */
+
+  .inputKnapp {
+  /* height: 25px; */
+  /* width: 500px; */
+  background-color: white;
+  font-size: 17px;
+  }
+  
+  /*#vis1 {
+    display: block;
+  } */ 
+
+  .button {
+    width: 200px;
+  }
+  /*------------------------------------------Konsistens.php---------------------------------------------*/
+  #epost_sjekk{
+    width: 40%;
+  }
+  #stemmetelling{
+    margin: 10px;
+    width:55%;
+  }
+
+  #resFremvisning {
+    border-radius: initial;
+}
+#indexArtikkel .valg_info{
+  border-radius: initial;
+}
+#minsideMain{
+  flex-direction: row;
+}
+.minsideFlex {
+  padding:0px;
+  min-width:23%;
+} 
+
+/*-------------------------------------logginn.php-----------------------------------------------------------*/
+
+
+@media (min-width: 1200px) {
+
+/*------------------------------------------------- Registrering.php -------------------------------------------------------------------- */
+  #alleredeRegistrert {
+  text-align: center;
+  }
+
+  /*.tabellRegistrering {
+    width: 50%; 
+    border-spacing: 50px;
+    margin-right: 30%; 
+    height: 250px;
+  } */
+
+  /* .kolonne1 {
+    text-align: right;
+    font-size: Large;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    height: 25px;
+  } */
+
+  .inputKnapp {
+  /* height:25px; */
+  background-color: rgb(255, 255, 255);
+  font-size: 17px;
+  }
+  .tdRegistrering {
+    text-align: center;
+  }
+  
+  /* .kolonne1, .tdRegistrering {
+   padding:15px;
+  } */
+
+  .button {
+    border-radius: 0%;
+  }
+  #vis1 {
+    display: block;
+  }
+
+  /*--------------------------------------------minside.php-----------------------------------------------*/
+
+  #byttBilde {
+    order: 1;
+  }
+  #byttPassordSec {
+    order: 3;
+  }
+  #kandidatInfoHide {
+    order: 2;
+  }
+  #trekkNominasjon {
+    order: 4;
+  }
+  #slettbrukerseksjon{
+    order: 9;
+  }
+  #utnevnBrukerType {
+    order: 5;
+  }
+  #endreValg {
+    order: 6;
+  }
+  #fjernTrukket {
+    order: 7;
+  }
+  #konsistens{
+    order: 8;
+  }
+
+} 
+
+/*--------------------------------------------resultat.php-----------------------------------------------*/
+#resultat_overskrift{
+  margin: 0px;
+  }
+}
